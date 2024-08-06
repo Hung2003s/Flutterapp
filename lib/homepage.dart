@@ -14,7 +14,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   final List<String> title = <String>['All', 'Breakfast', 'Drink','Snack'];
   final List<Widget> icon1 = <Widget> [
-
+    Container(),
     FaIcon(FontAwesomeIcons.burger, color: Colors.orange),
     FaIcon(FontAwesomeIcons.martiniGlassCitrus, color: Colors.orange),
     FaIcon(FontAwesomeIcons.cookie, color: Colors.orange)
@@ -141,7 +141,7 @@ class _HomepageState extends State<Homepage> {
               width: 326,
               height: 164,
               child: Image(
-              image: AssetImage('assets/Anh1.png'),
+              image: AssetImage('asset/Anh1.png'),
           )
           ),
           Container(
@@ -175,8 +175,16 @@ class _HomepageState extends State<Homepage> {
               ],
             ),
           ),
-          Container(),
-
+          Container(
+            width: 200,
+            height: 200,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (BuildContext context, int index) {
+                return Container();
+                })
+          ),
         ],
       ),
     ),
