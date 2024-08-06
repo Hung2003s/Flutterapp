@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foodapp/toolbar1.dart';
+import '';
 
 class Homepage extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   final List<String> title = <String>['All', 'Breakfast', 'Drink','Snack'];
   final List<Widget> icon1 = <Widget> [
-    Container(),
+
     FaIcon(FontAwesomeIcons.burger, color: Colors.orange),
     FaIcon(FontAwesomeIcons.martiniGlassCitrus, color: Colors.orange),
     FaIcon(FontAwesomeIcons.cookie, color: Colors.orange)
@@ -65,7 +66,7 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(right: 15),
+                margin: EdgeInsets.only(right: 15, bottom: 10),
                 decoration: BoxDecoration(
                     color: Color(0xff22BB9B).withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10)
@@ -133,7 +134,48 @@ class _HomepageState extends State<Homepage> {
 
             )
               ,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10, bottom: 10),
+
+              width: 326,
+              height: 164,
+              child: Image(
+              image: AssetImage('assets/Anh1.png'),
           )
+          ),
+          Container(
+            width: 323,
+            height: 30,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+
+                  children: [
+                    Text('Seafood', style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16
+                    ),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(left: 5),
+                        child: FaIcon(FontAwesomeIcons.shrimp, color: Colors.red,size: 16,)),
+                  ],
+                ),
+                TextButton(
+                    onPressed: () {},
+                    child: Text('See all', style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12,
+                    ),
+                    )
+                )
+
+              ],
+            ),
+          ),
+          Container(),
 
         ],
       ),
