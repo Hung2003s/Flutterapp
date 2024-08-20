@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:foodapp/sanpham/oneelement_hompage.dart';
+import 'package:foodapp/sanpham/product.dart';
 import 'package:foodapp/toolbar1.dart';
-import '';
+import '../image.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -22,7 +24,10 @@ class _HomepageState extends State<Homepage> {
 
   int currentindex = 0;
 
-
+  List<Product> _listproduct = [
+    Product('Beef Steak chicken nugget', 35, Images.anh2),
+    Product('Onagi Sushi', 54, Images.anh3)
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -176,14 +181,16 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
           Container(
-            width: 200,
-            height: 200,
+            margin: EdgeInsets.only(left: 15, top: 15),
+            width: MediaQuery.of(context).size.width,
+            height: 230,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-                itemCount: 4,
+                itemCount: _listproduct.length,
                 itemBuilder: (BuildContext context, int index) {
-                return Container();
-                })
+                return OneelementHompage(sanpham: _listproduct[index]);
+                }
+                )
           ),
         ],
       ),
@@ -191,3 +198,4 @@ class _HomepageState extends State<Homepage> {
       );
   }
 }
+
