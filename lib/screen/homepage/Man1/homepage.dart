@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foodapp/screen/homepage/Man1/toolbar.dart';
 
-import '../../../../image.dart';
+import '../../../allclass/image.dart';
 import '../../../allclass/product.dart';
 import '../Man2/homepage1_1.dart';
 import '../orderdetails.dart';

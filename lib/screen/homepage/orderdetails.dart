@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import '../../allclass/product.dart';
-import '../../image.dart';
+import '../../allclass/image.dart';
 import 'Man3/oneelementorder.dart';
 
 class Orderdetails extends StatefulWidget {
