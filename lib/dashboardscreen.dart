@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:foodapp/homepage.dart';
+import 'package:foodapp/screen/homepage/Man1/homepage.dart';
 
 class Dashboardscreen extends StatefulWidget {
   const Dashboardscreen({Key? key}) : super(key: key);
-
   @override
   State<StatefulWidget> createState() => _Dashboardscreen();
 
@@ -16,8 +15,11 @@ class _Dashboardscreen extends State<Dashboardscreen> {
     Container(
       child: Homepage(),
     ),
+    Container(),
+    Container(),
+    Container(),
+    Container(),
   ];
-  @override
   void _onItemtapped(int index) {
     setState(() {
       currentindex = index;
