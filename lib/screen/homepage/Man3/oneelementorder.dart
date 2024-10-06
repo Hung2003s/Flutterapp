@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../allclass/product.dart';
+import 'package:provider/provider.dart';
+
+import '../../../main.dart';
 
 class Oneelementorder extends StatefulWidget {
 
@@ -88,12 +91,7 @@ class _OneelementorderState extends State<Oneelementorder> {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      setState(() {
-                        index -= 1;
-                        if (index < 0) {
-                          index = 0;
-                        }
-                      });
+                      context.read<soluong>().remove();
                     },
                     icon: const Icon(Icons.remove, size: 10,),
                     color: const Color(0xff22BB9B),
@@ -104,7 +102,9 @@ class _OneelementorderState extends State<Oneelementorder> {
                   width: 20,
                   height: 24,
                   alignment: Alignment.center,
-                  child: Text('$index', style: const TextStyle(
+                  child: Text(
+                    context.watch<soluong>().count.toString(),
+                    style: const TextStyle(
                     fontSize: 16,
                     color: Color(0xff181818),
                     fontWeight: FontWeight.w500,
@@ -122,9 +122,7 @@ class _OneelementorderState extends State<Oneelementorder> {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      setState(() {
-                        index += 1;
-                      });
+                      context.read<soluong>().add();
                     },
                     icon: const Icon(Icons.add, size: 10,),
                     color: Colors.white ,

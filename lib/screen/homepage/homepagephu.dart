@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:foodapp/main.dart';
 import 'package:foodapp/screen/homepage/orderdetails.dart';
-
 import '../../allclass/product.dart';
+import 'package:provider/provider.dart';
 
 class Homepagephu extends StatefulWidget {
 
@@ -16,14 +17,9 @@ class Homepagephu extends StatefulWidget {
 class _HomepagephuState extends State<Homepagephu> {
   int index = 0;
   List<Widget> secondscreen = [
-    Orderdetails()
+    const Orderdetails()
   ];
   int currentindex = 0;
-  void _chon(int index) {
-    setState(() {
-      currentindex = index;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -224,7 +220,7 @@ class _HomepagephuState extends State<Homepagephu> {
                 IconButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return Orderdetails();
+                        return const Orderdetails();
                       }));
                     },
                     icon: const Icon(Icons.shopping_cart), color: const Color(0xff22BB9B),)
@@ -251,12 +247,9 @@ class _HomepagephuState extends State<Homepagephu> {
                   ),
                   child: IconButton(
                       onPressed: () {
-                        setState(() {
-                          index -= 1;
-                          if (index < 0) {
-                            index = 0;
-                          }
-                        });
+                        if (context.watch<soluong>().count >0 ) {
+                          context.read<soluong>().remove();
+                        }
                       },
                       icon: const Icon(Icons.remove),
                       color: const Color(0xff22BB9B),
@@ -265,7 +258,9 @@ class _HomepagephuState extends State<Homepagephu> {
                 Container(
                   width: 40,
                   alignment: Alignment.center,
-                  child: Text('$index', style: const TextStyle(
+                  child: Text(
+                    context.watch<soluong>().count.toString(),
+                    style: const TextStyle(
                     fontSize: 24,
                     color: Color(0xff181818),
                     fontWeight: FontWeight.w500,
@@ -281,9 +276,7 @@ class _HomepagephuState extends State<Homepagephu> {
                   ),
                   child: IconButton(
                       onPressed: () {
-                        setState(() {
-                          index += 1;
-                        });
+                        context.read<soluong>().add();
                       },
                       icon: const Icon(Icons.add),
                       color: Colors.white ,

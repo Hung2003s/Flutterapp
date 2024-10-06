@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/screen/homepage/Man1/homepage.dart';
 
 
 import '../../allclass/product.dart';
@@ -110,7 +111,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                 margin: const EdgeInsets.only(left: 25),
                 child: Text('---------------------------------------',style: TextStyle(
                   letterSpacing: 2,
-                  color: Color(0xff181818).withOpacity(0.2),
+                  color: const Color(0xff181818).withOpacity(0.2),
                   fontSize: 24
                 ),),
               ),const SizedBox(
@@ -139,7 +140,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                     Text('\$ 20', style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 14,
-                          color: Color(0xff181818).withOpacity(0.5)
+                          color: const Color(0xff181818).withOpacity(0.5)
                         ),
                         )
                   ],
@@ -154,9 +155,9 @@ class _OrderdetailsState extends State<Orderdetails> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
+                    const Row(
                       children: [
-                        const Text('Total', style: TextStyle(
+                        Text('Total', style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                         ),
@@ -166,7 +167,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                     Text('\$ 81', style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 18,
-                      color: Color(0xff181818).withOpacity(0.5)
+                      color: const Color(0xff181818).withOpacity(0.5)
                     ),
                     )
                   ],
@@ -224,15 +225,19 @@ class _OrderdetailsState extends State<Orderdetails> {
               ),
               Container(
                 width: 325,
-                height: 57, margin: EdgeInsets.only(left: 25),
+                height: 57, margin: const EdgeInsets.only(left: 25),
                 decoration: BoxDecoration(
-                  color: Color(0xff22BB9B),
+                  color: const Color(0xff22BB9B),
                   borderRadius: BorderRadius.circular(16)
                   ),
                 alignment: Alignment.center,
                 child: GestureDetector(
-                  onTap: () {},
-                  child: Text('Check out', style: TextStyle(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return const Homepage();
+                    }));
+                  },
+                  child: const Text('Check out', style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
                     fontFamily: 'Rubik',
@@ -240,8 +245,6 @@ class _OrderdetailsState extends State<Orderdetails> {
                     height: 0,
                     letterSpacing: 0.50,
                   ),),
-
-
                 ),
               )
             ],

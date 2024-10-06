@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../allclass/product.dart';
+import 'package:provider/provider.dart';
+
+import '../../../main.dart';
 
 class OneelementHomepage11 extends StatelessWidget {
   Product sanpham2;
@@ -57,7 +59,9 @@ class OneelementHomepage11 extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5)
             ),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<soluong>().add();
+                },
                 autofocus: true,
                 padding: const EdgeInsets.only(right: 3),
                 icon: const Icon(Icons.add, size: 24,color: Colors.white,)
