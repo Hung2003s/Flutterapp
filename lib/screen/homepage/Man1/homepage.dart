@@ -5,7 +5,7 @@ import 'package:foodapp/screen/homepage/Man1/toolbar.dart';
 import '../../../allclass/image.dart';
 import '../../../allclass/product.dart';
 import '../Man2/homepage1_1.dart';
-import '../orderdetails.dart';
+import '../Man3/orderdetails.dart';
 import 'oneelementhomepage.dart';
 
 class Homepage extends StatefulWidget {
@@ -24,8 +24,8 @@ class _HomepageState extends State<Homepage> {
     Image.asset('asset/icon3.png'),
   ];
   final List<Product> _listproduct = [
-    Product('Beef Steak chicken nugget', 35, Images.anh2),
-    Product('Onagi Sushi', 54, Images.anh3)
+    Product('Beef Steak chicken nugget', 35, Images.anh2, 0),
+    Product('Onagi Sushi', 54, Images.anh3,0)
   ];
 
   void navigateHome2() {

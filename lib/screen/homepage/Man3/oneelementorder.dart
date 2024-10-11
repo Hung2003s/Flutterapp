@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodapp/allclass/orderpr.dart';
 
 import '../../../allclass/product.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,7 @@ class _OneelementorderState extends State<Oneelementorder> {
     return Container(
       width: 325,
       height: 64,
-      margin: EdgeInsets.only(bottom: 35),
+      margin: const EdgeInsets.only(bottom: 35),
       decoration: const BoxDecoration(),
       child: Row(
         children: [
@@ -91,7 +92,7 @@ class _OneelementorderState extends State<Oneelementorder> {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      context.read<soluong>().remove();
+                       context.read<Product>().removepr();
                     },
                     icon: const Icon(Icons.remove, size: 10,),
                     color: const Color(0xff22BB9B),
@@ -103,7 +104,7 @@ class _OneelementorderState extends State<Oneelementorder> {
                   height: 24,
                   alignment: Alignment.center,
                   child: Text(
-                    context.watch<soluong>().count.toString(),
+                    context.watch<Product>().count.toString(),
                     style: const TextStyle(
                     fontSize: 16,
                     color: Color(0xff181818),
@@ -122,11 +123,10 @@ class _OneelementorderState extends State<Oneelementorder> {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      context.read<soluong>().add();
+                      context.read<Product>().addpr();
                     },
                     icon: const Icon(Icons.add, size: 10,),
                     color: Colors.white ,
-
                   ),
                 )
               ],

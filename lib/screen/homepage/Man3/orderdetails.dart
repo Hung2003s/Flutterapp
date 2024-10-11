@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foodapp/allclass/orderpr.dart';
 import 'package:foodapp/screen/homepage/Man1/homepage.dart';
 
 
-import '../../allclass/product.dart';
-import '../../allclass/image.dart';
-import 'Man3/oneelementorder.dart';
+import '../../../allclass/product.dart';
+import '../../../allclass/image.dart';
+import '../Man4/payment.dart';
+import 'oneelementorder.dart';
 
 class Orderdetails extends StatefulWidget {
   const Orderdetails({super.key});
@@ -14,14 +16,12 @@ class Orderdetails extends StatefulWidget {
 }
 
 class _OrderdetailsState extends State<Orderdetails> {
-
-
   final List<Product> _listproduct = [
-    Product('Hot Tuna', 35, Images.anh4),
-    Product('Fried Squid', 54, Images.anh5),
-    Product('Spacy fresh crab', 0, Images.anh6),
-    Product('Onagi sushi', 0, Images.anh7),
-    Product('Shrimp', 0, Images.anh8),
+    Product('Hot Tuna' , 35, Images.anh4, 0),
+    Product('Fried Squid' , 54, Images.anh5, 0),
+    Product('Spacy fresh crab' , 0, Images.anh6, 0),
+    Product('Onagi sushi' , 0, Images.anh7,0 ),
+    Product('Shrimp' , 0, Images.anh8, 0),
   ];
   @override
   Widget build(BuildContext context) {
@@ -176,7 +176,13 @@ class _OrderdetailsState extends State<Orderdetails> {
               const SizedBox(
                 height: 15,
               ),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Payment();
+                  }));
+                },
+               child: Container(
                 margin: const EdgeInsets.only(left: 25),
                 width: 325,
                 height: 57,
@@ -220,9 +226,17 @@ class _OrderdetailsState extends State<Orderdetails> {
                   ],
                 ),
               ),
+              ),
               const SizedBox(
                 height: 25,
               ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const Homepage();
+              }));
+              },
+        child:
               Container(
                 width: 325,
                 height: 57, margin: const EdgeInsets.only(left: 25),
@@ -231,13 +245,7 @@ class _OrderdetailsState extends State<Orderdetails> {
                   borderRadius: BorderRadius.circular(16)
                   ),
                 alignment: Alignment.center,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return const Homepage();
-                    }));
-                  },
-                  child: const Text('Check out', style: TextStyle(
+                child:  const Text('Check out', style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
                     fontFamily: 'Rubik',

@@ -6,7 +6,7 @@ import '../../../allclass/product.dart';
 import '../../../allclass/image.dart';
 
 import '../Man1/toolbar.dart';
-import '../homepagephu.dart';
+import '../Man3/homepagephu.dart';
 import 'oneelementhomepage1.dart';
 import 'oneelementhomepage1_1.dart';
 
@@ -31,11 +31,11 @@ class _Homepage1State extends State<Homepage1> {
 
   ];
   final List<Product> _listproduct = [
-    Product('Hot Tuna', 35, Images.anh4),
-    Product('Fried Squid', 54, Images.anh5),
-    Product('Spacy fresh crab', 0, Images.anh6),
-    Product('Onagi sushi', 0, Images.anh7),
-    Product('Shrimp', 0, Images.anh8),
+    Product('Hot Tuna', 35, Images.anh4, 10),
+    Product('Fried Squid', 54, Images.anh5, 20),
+    Product('Spacy fresh crab', 0, Images.anh6, 30),
+    Product('Onagi sushi', 0, Images.anh7, 10),
+    Product('Shrimp', 0, Images.anh8, 20),
   ];
   void navigateHome11(int index) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {

@@ -1,9 +1,11 @@
-class Product {
+import 'package:flutter/cupertino.dart';
+
+class Product with ChangeNotifier {
    String _name;
    int _price;
    String _anh;
-
-  Product(this._name, this._price, this._anh);
+   int count;
+  Product(this._name, this._price, this._anh, this.count);
 
   int get price => _price;
 
@@ -21,5 +23,15 @@ class Product {
 
   set anh(String value) {
     _anh = value;
+  }
+  void addpr() {
+    count++;
+    notifyListeners();
+  }
+  void removepr() {
+    if(count>0) {
+      count--;
+    }
+    notifyListeners();
   }
 }
