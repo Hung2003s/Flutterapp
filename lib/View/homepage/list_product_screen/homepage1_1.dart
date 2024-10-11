@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-
-
-
-import '../../../allclass/product.dart';
-import '../../../allclass/image.dart';
-
-import '../Man1/toolbar.dart';
-import '../Man3/homepagephu.dart';
+import '../../../Model/image.dart';
+import '../../../Model/product.dart';
+import '../homepage_screen/toolbar.dart';
+import '../product_details/homepagephu.dart';
 import 'oneelementhomepage1.dart';
 import 'oneelementhomepage1_1.dart';
 
@@ -31,14 +27,14 @@ class _Homepage1State extends State<Homepage1> {
 
   ];
   final List<Product> _listproduct = [
-    Product('Hot Tuna', 35, Images.anh4, 10),
-    Product('Fried Squid', 54, Images.anh5, 20),
-    Product('Spacy fresh crab', 0, Images.anh6, 30),
-    Product('Onagi sushi', 0, Images.anh7, 10),
-    Product('Shrimp', 0, Images.anh8, 20),
+    Product('Hot Tuna', 35, Images.anh4, 10,''),
+    Product('Fried Squid', 54, Images.anh5, 20,''),
+    Product('Spacy fresh crab', 0, Images.anh6, 30,''),
+    Product('Onagi sushi', 0, Images.anh7, 10,''),
+    Product('Shrimp', 0, Images.anh8, 20,''),
   ];
   void navigateHome11(int index) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return Homepagephu(_listproduct[index]);
     }));
   }
@@ -210,7 +206,7 @@ class _Homepage1State extends State<Homepage1> {
                       onTap: (){
                         navigateHome11(index+2);
                       },
-                      child: OneelementHomepage11(sanpham2: _listproduct[index+2],),
+                      child: OneElementHomepage11(sanpham2: _listproduct[index+2],),
                     );
                   } ),
             )

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../../../allclass/product.dart';
+import '../../../Model/product.dart';
 import 'package:provider/provider.dart';
-
 import '../../../main.dart';
 
-class OneelementHomepage11 extends StatelessWidget {
+class OneElementHomepage11 extends StatelessWidget {
   Product sanpham2;
-  OneelementHomepage11({super.key, required this.sanpham2});
+  OneElementHomepage11({super.key, required this.sanpham2});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class OneelementHomepage11 extends StatelessWidget {
                 SizedBox(
                   width: 24,
                   height: 24,
-                  child: Image.asset(sanpham2.anh, fit: BoxFit.cover,width: 24, height: 24, ),
+                  child: Image.asset(sanpham2.image, fit: BoxFit.cover,width: 24, height: 24, ),
                 ),
               ],
             ),

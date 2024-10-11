@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:foodapp/screen/homepage/Man1/homepage.dart';
+
+import '../View/homepage/homepage_screen/homepage.dart';
+
 
 class Dashboardscreen extends StatefulWidget {
-  const Dashboardscreen({Key? key}) : super(key: key);
+  const Dashboardscreen({super.key});
   @override
   State<StatefulWidget> createState() => _Dashboardscreen();
 
@@ -12,9 +13,7 @@ class Dashboardscreen extends StatefulWidget {
 class _Dashboardscreen extends State<Dashboardscreen> {
   int currentindex = 0;
   List<Widget> screen = [
-    Container(
-      child: Homepage(),
-    ),
+    const Homepage(),
     Container(),
     Container(),
     Container(),
@@ -29,10 +28,10 @@ class _Dashboardscreen extends State<Dashboardscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Color(0xff22BB9B),
-        unselectedItemColor: Color(0xff181818).withOpacity(0.1),
+        selectedItemColor: const Color(0xff22BB9B),
+        unselectedItemColor: const Color(0xff181818).withOpacity(0.1),
         onTap: _onItemtapped,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               label: 'Home',
               icon: Icon(Icons.house_sharp)

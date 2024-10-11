@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../Man1/homepage.dart';
+import '../homepage_screen/homepage.dart';
+
+
 
 class Payment extends StatefulWidget {
   const Payment({super.key});
@@ -198,7 +200,7 @@ class _PaymentState extends State<Payment> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
+              Navigator.of(context).push( MaterialPageRoute(builder: (context) {
                   return const Homepage();
                 }));
               },

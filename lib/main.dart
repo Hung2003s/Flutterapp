@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:foodapp/allclass/product.dart';
-import 'package:foodapp/dashboardscreen.dart';
+
+import 'package:foodapp/Controller/dashboardscreen.dart';
+import 'package:foodapp/Controller/product_provider.dart';
 import 'package:provider/provider.dart';
 
 
@@ -35,7 +36,7 @@ void main() {
     MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => soluong()),
-          ChangeNotifierProvider(create: (_)=> Product('Hung', 30, '_anh', 0)),
+          ChangeNotifierProvider(create: (_)=> ProductProvider()),
         ],
       child:  const MaterialApp(
       title: 'Le Minh Hung',

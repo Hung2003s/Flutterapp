@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../Model/product.dart';
 
-import '../../../allclass/product.dart';
 
 class OneElementHomepage1 extends StatelessWidget {
   final Product sanphamdexuat;
@@ -30,7 +30,7 @@ class OneElementHomepage1 extends StatelessWidget {
                       height: 225,
                       decoration: const BoxDecoration(
                       ),
-                      child: Image.asset(sanphamdexuat.anh, fit: BoxFit.cover,),
+                      child: Image.asset(sanphamdexuat.image, fit: BoxFit.cover,),
                     ),
                     Container(
                       width: 176,

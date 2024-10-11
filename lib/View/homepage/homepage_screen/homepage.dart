@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:foodapp/screen/homepage/Man1/toolbar.dart';
-
-import '../../../allclass/image.dart';
-import '../../../allclass/product.dart';
-import '../Man2/homepage1_1.dart';
-import '../Man3/orderdetails.dart';
+import 'package:foodapp/View/homepage/homepage_screen/toolbar.dart';
+import '../../../Model/image.dart';
+import '../../../Model/product.dart';
+import '../list_product_screen/homepage1_1.dart';
+import '../product_details/orderdetails.dart';
 import 'oneelementhomepage.dart';
 
 class Homepage extends StatefulWidget {
@@ -24,14 +23,12 @@ class _HomepageState extends State<Homepage> {
     Image.asset('asset/icon3.png'),
   ];
   final List<Product> _listproduct = [
-    Product('Beef Steak chicken nugget', 35, Images.anh2, 0),
-    Product('Onagi Sushi', 54, Images.anh3,0)
+    Product('Beef Steak chicken nugget', 35, Images.anh2,0,'hung' ),
+    Product('Onagi Sushi', 54, Images.anh3, 0,'hung'),
   ];
 
   void navigateHome2() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return const Homepage1();
-    }));
+ Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage1(),));
   }
   int currentindex = 0;
   @override
@@ -92,9 +89,7 @@ class _HomepageState extends State<Homepage> {
                 child:
                 IconButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return const Orderdetails();
-                      }));
+                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Orderdetails(),));
                     },
                     icon: const Icon(Icons.add_shopping_cart_outlined,
                     color: Color(0xff22BB9B),)
@@ -203,7 +198,7 @@ class _HomepageState extends State<Homepage> {
               scrollDirection: Axis.horizontal,
                 itemCount: _listproduct.length,
                 itemBuilder: (BuildContext context, int index) {
-                return OneelementHompage(sanpham: _listproduct[index]);
+                return OneElementHomepage(sanPham: _listproduct[index]);
                 }
                 )
           ),

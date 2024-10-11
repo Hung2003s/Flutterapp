@@ -1,15 +1,11 @@
-
-
-
 import 'package:flutter/material.dart';
+import '../../../Model/product.dart';
 
-import '../../../allclass/product.dart';
+class OneElementHomepage extends StatelessWidget {
 
-class OneelementHompage extends StatelessWidget {
+  final Product sanPham;
 
-  final Product sanpham;
-
-  const OneelementHompage({super.key, required this.sanpham});
+  const OneElementHomepage({super.key, required this.sanPham});
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +27,13 @@ class OneelementHompage extends StatelessWidget {
             decoration: const BoxDecoration(
                 color: Colors.white
             ),
-            child: Image.asset(sanpham.anh,fit: BoxFit.cover, ),
+            child: Image.asset(sanPham.image,fit: BoxFit.cover, ),
           ),
           Container(
             width: 122,
             height: 50,
             margin: const EdgeInsets.only(top: 10),
-            child: Text(' ${sanpham.name}', style: const TextStyle(
+            child: Text(' ${sanPham.name}', style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
               color: Color(0xFF181818),
@@ -48,7 +44,7 @@ class OneelementHompage extends StatelessWidget {
             children: [
               Container(
                   margin: const EdgeInsets.only(bottom: 16),
-                  child: Text(' \$ ${sanpham.price}', style: const TextStyle(
+                  child: Text(' \$ ${sanPham.price}', style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
                   ),)),

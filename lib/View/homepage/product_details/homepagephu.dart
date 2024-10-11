@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:foodapp/main.dart';
-import 'package:foodapp/screen/homepage/Man3/orderdetails.dart';
-import '../../../allclass/product.dart';
 import 'package:provider/provider.dart';
+
+import '../../../Model/product.dart';
+import '../../../main.dart';
+import 'orderdetails.dart';
 
 class Homepagephu extends StatefulWidget {
 
@@ -73,7 +74,7 @@ class _HomepagephuState extends State<Homepagephu> {
                 SizedBox(
                   width: 164,
                   height: 164,
-                  child: Image.asset(widget.sp3.anh,fit: BoxFit.cover,),
+                  child: Image.asset(widget.sp3.image,fit: BoxFit.cover,),
                 )
               ],
             ),
@@ -221,7 +222,7 @@ class _HomepagephuState extends State<Homepagephu> {
                 ),
                 IconButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                         return const Orderdetails();
                       }));
                     },
